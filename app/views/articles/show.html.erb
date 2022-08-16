@@ -1,0 +1,23 @@
+<div class="card bg-transparent">
+  <div class="card-body">
+    <h2 class="card-title"><%= @article.title.capitalize %></h2>
+
+    <p class="card-text"><%= @article.content %></p>
+
+    <p class="card-link"><%= link_to "Edit", edit_article_path(@article.id) %></p>
+
+    <p class="card-link">
+      <%= link_to "Delete",
+        article_path(@article),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </p>
+
+    <p class="card-link">
+      <%= link_to "Back to list",
+        articles_path
+      %>
+    </p>
+
+  </div>
+</div>
